@@ -1,0 +1,179 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+ void menuPrincipal() {
+   unsigned int option;
+    while(1){
+      printf("\n**Menú de Registo**\n");
+      printf("1)Login\n");
+      printf("2)Criar conta\n");
+      printf("3)Sair\n");
+      printf("Escolha uma opção: ");
+      scanf("%d", &option);
+    if(option == 1){
+	     login();
+      }
+    else if(option == 2){
+	      criarConta();
+     }
+    else if(option == 3){
+	      exit(0);
+     }
+    else {
+      printf("Opção inválida.Por favor tente de novo.");
+      system("clear");
+      menuPrincipal();
+    }
+
+
+ }
+
+ }
+
+/*
+ void login () {
+   unsigned int option;
+    while(1){
+  printf("\n**Login/Autenticar**\n");
+  printf("1)Nome/Email: ");
+  printf("2)Password:");
+   }
+}
+
+
+
+ void entradaLogin () {
+   unsigned int option;
+     while(1){
+  printf ("\n**Menu**\n");
+  printf ("1)Ver Feed\n");
+  printf ("2)Ver Tópicos\n");
+  printf ("3)Procurar tópicos mais ativos\n");
+  printf ("4)Subescrever tópicos\n");
+  printf ("5)Publicar num tópico\n");
+  printf ("6)Gerir Lista de Subscrições\n");
+  printf ("7)Ver Estatísticas\n");
+  printf ("8)Gestão da conta de utilizador\n")
+  printf ("9)Sair\n");
+  if (option == 1){
+    feed ();}0
+  else  if (option == 2){
+    verMensagemDeUmTopico ();}
+  else if (option == 3){
+    procurarTopicoMaisAtivos ();}
+  else if (option == 4){
+    subescreverTopicos ();}
+  else if (option == 5){
+    publicarNumTopico ();}
+  else if (option == 6){
+    gerirListasDeSubescrições ();}
+  else if (option == 7){
+    verEstatisticas ();}
+  else if (option == 8){
+    gestaoDaContaDeUtilizador ();}
+  else (option == 9){
+      sair ();}
+
+
+   }
+ }
+
+
+void feed () {
+
+
+}
+
+void verMensagensDeUmTopico () {
+
+}
+
+
+void procurarTopicosMaisAtivos () {
+
+}
+
+
+void subsescreverTopicos () {
+
+}
+
+
+void publicarNumTopico () {
+
+}
+
+
+
+void gerirLIstasDeSubescrições () {
+
+}
+
+
+void verEstatisticas () {
+
+}
+
+
+void  gestaoDaContaDeUtilizador () {
+   unsigned int option;
+     while(1){
+  printf ("1)Mudar de Nome\n");
+  printf ("2)Mudar Data De Nascimento\n");
+  printf ("3)Mudar Email\n");
+  printf ("4)");
+  printf ("5)");
+  printf ("6)");
+  printf ("7)");
+  printf ("8)")
+  printf ("9)");
+  if (option == 1){
+    feed ();}
+  else  if (option == 2){
+    verMensagemDeUmTopico ();}
+  else if (option == 3){
+    procurarTopicoMaisAtivos ();}
+  else if (option == 4){
+    subescreverTopicos ();}
+  else if (option == 5){
+    publicarNumTopico ();}
+  else if (option == 6){
+    gerirListasDeSubescrições ();}
+  else if (option == 7){
+    verEstatisticas ();}
+  else if (option == 8){
+    gestaoDaContaDeUtilizador ();}
+  else (option ==9){
+      sair ();}
+
+
+   }
+
+}
+
+
+
+void sair () {
+  return 0;
+
+}
+
+
+void criarConta () {
+
+  printf("**Criar Conta**");
+  printf("Nome:");
+  printf(" Data de Nascimento:");
+  printf ("Email:");
+    /*depois de criar a conta tem de ir de imediato para a pagina de login e fazer o login...
+
+
+}
+*/
+
+
+
+int main (){
+  menuPrincipal();
+}
