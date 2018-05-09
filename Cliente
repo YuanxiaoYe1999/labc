@@ -15,13 +15,13 @@ void menuPrincipal() {
       printf("Escolha uma opção: ");
       scanf("%d", &option);
       if(option == 1){
-	     login();
+	     void login();
       }
     else if(option == 2){
-	      criarConta();
+	      void criarConta();
      }
      else if(option == 3){
-       menu();
+       void menu();
      }
     else if(option == 4){
 	      exit(0);
@@ -39,7 +39,7 @@ void menuPrincipal() {
  }
 
 void login () {
-   unsigned int option, a, b;
+   unsigned int option, nomemail, pass;
     while(1){
   printf("\n**Login/Autenticar**\n");
   printf("1)Nome/Email:\n ");
@@ -48,12 +48,10 @@ void login () {
   printf("Escolha uma opção: ");
   scanf("%d", &option);
   if(option == 1){
-    scanf("%d", &a);
-    password();
+    scanf("%d", &nomemail);
   }
   else if(option == 2){
-    scanf("%d", &b);
-     menu();
+    scanf("%d", &pass);
   }
   else if(option == 3){
     exit(0);
@@ -83,35 +81,37 @@ void menu() {
   printf ("9)Sair\n");
   printf("Escolha uma opção: ");
   scanf("%d", &option);
-    if (option == 1){
-    feed();
+
+  if (option == 1){
+    void feed();
   }
   else  if (option == 2){
-    verMensagemDeUmTopico();
+    void verTopico();
   }
   else if (option == 3){
-    procurarTopicoMaisAtivos();
+    void procurarTopicoMaisAtivos();
   }
   else if (option == 4){
-    subescreverTopicos();
+    void subescreverTopicos();
   }
   else if (option == 5){
-    publicarNumTopico();
+    void publicarNumTopico();
   }
   else if (option == 6){
-    gerirSubescricoes();
+    void gerirSubescricoes();
   }
   else if (option == 7){
-    verEstatisticas();
+    void verEstatisticas();
   }
   else if (option == 8){
-    gestaoDaContaDeUtilizador();
+    void gestaoDaContaDeUtilizador();
   }
 
   else if(option == 9){
       exit(0);
   }
-   else {
+
+   else if {
     printf("Opção inválida.Por favor tente de novo.");
     system("clear");
     menuPrincipal();
@@ -124,6 +124,8 @@ void menu() {
 
 void feed () {
   unsigned int option;
+  char *topicos;
+  int like;
   while(1){
  printf("1)Consultar Topico\n");
  printf("2)Por like nos Topicos\n");
@@ -132,10 +134,10 @@ void feed () {
  scanf("%d", &option);
 
   if (option == 1){
-    verMensagemDeUmTopico();
+    scanf("%s", &*topicos);
  }
   else  if (option == 2){
-    verMensagemDeUmTopico();
+    scanf("%d", &like);
  }
 
   else if(option == 3){
@@ -154,8 +156,8 @@ void feed () {
 
 }
 
-void verMensagensDeUmTopico () {
- unsigned int option;
+void verTopico () {
+ unsigned int option, vertopicos;
  while(1){
  printf("1)Ver menssagem de um topico\n");
  printf("2)Sair\n");
@@ -163,7 +165,7 @@ void verMensagensDeUmTopico () {
  scanf("%d", &option);
 
   if (option == 1){
-   verMensagemDeUmTopico();
+   scanf("%d", &vertopicos);
    }
   else  if (option == 2){
     exit(0);
@@ -174,6 +176,7 @@ void verMensagensDeUmTopico () {
    system("clear");
    menuPrincipal();
    break;
+   sleep(1);
 
    }
   }
@@ -198,6 +201,7 @@ void procurarTopicosMaisAtivos () {
    system("clear");
    menuPrincipal();
    break;
+   sleep(1);
 
 
    }
@@ -220,7 +224,7 @@ void subsescreverTopicos () {
    system("clear");
    menuPrincipal();
    break;
-
+   sleep(1);
     }
   }
  }
@@ -241,6 +245,7 @@ void publicarNumTopico () {
    system("clear");
    menuPrincipal();
    break;
+   sleep(1);
 
 
    }
@@ -297,9 +302,10 @@ void verEstatisticas () {
   }
  }
 
-void  gestaoDaContaDeUtilizador () {
+void  gestaoDeUtilizador () {
    unsigned int option;
-
+   int mdata;
+   char *mnome, *memail;
      while(1){
   printf ("1)Mudar de Nome\n");
   printf ("2)Mudar Data De Nascimento\n");
@@ -309,16 +315,13 @@ void  gestaoDaContaDeUtilizador () {
   scanf("%d", &option);
 
   if (option == 1){
-   scanf("%s");
-   option;
+   scanf("%s", &*mnome);
   }
   else  if(option == 2){
-    scanf("%d");
-    option;
+    scanf("%d", &mdata);
   }
   else if(option == 3){
-    scanf("%s");
-    option;
+    scanf("%s", &*memail);
   }
   else if(option == 4){
       exit(0);
@@ -337,24 +340,24 @@ void  gestaoDaContaDeUtilizador () {
 }
 
 void criarConta () {
-    unsigned int option, data, email;
-    char *nome;
+    unsigned int option, data;
+    char *nome, *email;
     while(1){
   printf("**Criar Conta**\n");
-  printf("1)Nome:%s, &nome\n ");
-  printf("2)Data de Nascimento:%d, &data\n ");
-  printf("3)Email:%s, &email\n");
+  printf("1)Nome:\n ");
+  printf("2)Data de Nascimento:\n ");
+  printf("3)Email:\n");
   printf("Escolha uma opção: ");
   scanf("%d", &option);
 
   if (option == 1){
-    scanf("%s", &nome);
+    scanf("%s", &*nome);
   }
   else if(option == 2){
     scanf("%d", &data);
    }
    else if (option == 3){
-     scanf("%s", &email);
+     scanf("%s", &*email);
    }
 
   else {
@@ -370,15 +373,14 @@ void criarConta () {
 int main (void){
   menuPrincipal ();
   login ();
-  password ();
   menu ();
   feed ();
-  verMensagensDeUmTopico ();
+  verTopico ();
   procurarTopicosMaisAtivos ();
   publicarNumTopico ();
   gerirSubescricoes();
   verEstatisticas ();
-  gestaoDaContaDeUtilizado ();
+  gestaoDeUtilizado ();
   criarConta();
 
  return 0;
