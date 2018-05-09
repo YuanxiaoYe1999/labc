@@ -104,19 +104,19 @@ void menu() {
     void verEstatisticas();
   }
   else if (option == 8){
-    void gestaoDaContaDeUtilizador();
+    void gestaoDeUtilizador();
   }
 
   else if(option == 9){
       exit(0);
   }
 
-   else if {
-    printf("Opção inválida.Por favor tente de novo.");
-    system("clear");
-    menuPrincipal();
-    break;
-    sleep(1);
+  else {
+   printf("Opção inválida.Por favor tente de novo.");
+   system("clear");
+   menuPrincipal();
+   break;
+   sleep(1);
       }
 
    }
@@ -303,8 +303,7 @@ void verEstatisticas () {
  }
 
 void  gestaoDeUtilizador () {
-   unsigned int option;
-   int mdata;
+   unsigned int option, mdata;
    char *mnome, *memail;
      while(1){
   printf ("1)Mudar de Nome\n");
@@ -380,8 +379,9 @@ int main (void){
   publicarNumTopico ();
   gerirSubescricoes();
   verEstatisticas ();
-  gestaoDeUtilizado ();
+  gestaoDeUtilizador ();
   criarConta();
 
  return 0;
 }
+
