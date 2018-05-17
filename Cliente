@@ -728,3 +728,75 @@ int main (void){
  return 0;
 }
 
+-----------------------------------------------------
+void login () {
+   char user[20], pass[20];
+   FILE *fl;
+   fl=fopen("login.txt", "a");
+
+  if (fl == NULL) {
+    printf("nao foi possivel abrir o ficheiro");
+    getchar();
+    exit(0);
+  } 
+   char userI[20], passI[20];
+  ///while(1){
+   while (fgets())
+ printf("\n**Login**\n");
+
+
+  /// pedir user -> ver se user existe na bd
+  /// pedir pass caso user exista -> verificar se pass é correta
+
+  printf("User:\n ");
+  scanf("%s",user);
+  printf("Password:\n ");
+  scanf("%s",pass);
+
+
+  fscanf(fl,"%s,%s",userI,passI);
+
+         ((strcmp(user,userI)==0) && (strcmp(pass,passI)==0))
+          printf("\nUser e Password correto\n");
+           feed();
+
+
+      /*     while (1){
+             if (fgets(userI,20,fl) !=NULL ){
+                printf("%s", userI);
+              }
+
+             else if (fgets(passI,20,fl)){
+               puts(passI);
+           }
+   */
+
+
+  else{
+        printf("\nUser e/ou Password incoreto\n");
+ }
+  /*if(option == 1){
+    scanf("%s", nome);
+
+
+  }
+  else if(option == 2){
+    scanf("%s", nome);
+
+
+  }
+  else if(option == 3){
+    exit(0);
+  }
+  else {
+     printf("Opção inválida.Por favor tente de novo.");
+     system("clear");
+     menuPrincipal();
+     break;
+  }
+
+ }*/
+ fclose(fl);
+ //como interligar as contas criadas com o login
+
+}
